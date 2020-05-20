@@ -1,0 +1,82 @@
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="css/style" type="text/css" href="style.css" />
+<div class="container" style="background-image: url('background.png');height:100%;width:100%">
+    <div class="row_login_box">
+        <div class="col-md-12 col-xs-12" align="center">
+
+            <div class="outter"><img src="mo.png" class="image-circle" /></div>
+
+            <h1 style="color:white;">
+                Mohamad Khalifa<br />
+                <span>Software Engineer/Web Developer</span>
+            </h1>
+        </div>
+        <center style="border: 1px solid ;margin: auto; margin: auto;width: 70%;padding: 10px;background-image: url('black.jpg');">
+
+            <div class="profile-userbuttons">
+                <button type="button" class="btn btn-success btn-sm">Follow</button>
+                <button onclick="getinfo()" type="button" class="btn btn-danger btn-sm">Message</button>
+            </div>
+
+            <div class="profile-usermenu">
+                <ul class="nav">
+                    <li class="active">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="skills.html">
+                            <i class="glyphicon glyphicon-user"></i>
+                            Prior Experience
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" target="_blank">
+                            <i class="glyphicon glyphicon-ok"></i>
+                            Contact Info
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </center>
+       
+      
+            <script type="text/javascript">
+                function getinfo() {
+                    $.ajax({
+                        type: "GET",
+                        url: 'http://localhost:3000/user',
+                        dataType: 'json',
+                        success: function (data) {
+
+                            alert("AVAILABILITY: " + data[data.length-1].username + "\n" + data[data.length-1].email + "\n Price: $" + data[data.length-1].password);
+                            
+
+                        }
+                    });
+
+                }
+            </script>
+
+
+
+    </div>
+</div>
+<!------width: 100%;border: 1px solid ;margin: auto; margin: auto;width: 60%;border: 3px solid #73AD21;padding: 10px;----->"

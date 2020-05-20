@@ -1,0 +1,41 @@
+<html>
+<style>
+    div {
+
+        background-color:lightsteelblue;
+
+
+    }
+</style>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<input type="button" onclick="getList()" class="fadeIn fourth" value="Register">
+<div id="only">
+
+</div>     
+<script type="text/javascript">var temp = localStorage.getItem('username')
+    function getList() {
+        $.ajax({
+            type: "GET",
+            url: 'http://localhost:3000/user',
+            dataType: 'json',
+            success: function (data) {
+                var temp = "UserNames: ";
+                for (var i = 0; i < data.length; i++) {
+                    
+                    temp += "<p>"+data[i].username+"<p>";
+                    document.getElementById("only").innerHTML = "Welcome! " + temp;
+                    console.log(data[i].username);
+
+                }
+
+
+            }
+
+        });
+
+    }
+    </script>
+
+
+</html>
